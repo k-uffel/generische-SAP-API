@@ -30,10 +30,6 @@ CLASS Z_CL_REST_API_HANDLER IMPLEMENTATION.
   METHOD if_rest_application~get_root_handler.
     DATA(lr_router) = NEW cl_rest_router( ).
 
-    lr_router->attach( iv_template = '/content'
-                       iv_handler_class = 'Z_CL_REST_API_RESOURCE' "OLD!!!
-                       ).
-
     lr_router->attach( iv_template = '/genericapi'
                    iv_handler_class = 'ZKUF_CL_GENERIC_API_RES'
                    ).
